@@ -21,6 +21,7 @@ body{
                 padding: 2em;
                 border-radius: 15px;
                 h2{
+                    text-align: center;
                     padding: 1em;
                     font-size: 1.8rem;
                     color: $aqua;
@@ -54,5 +55,17 @@ body{
         }
     }
 }
-
+@media screen and (max-width:768px){
+    #sing-in{
+        .container{
+            .form-group{
+                padding: 1em !important;
+                h2{
+                    padding: .5em !important;
+                    font-size: 1.4rem !important;
+                }
+            }
+        }
+    }    
+}
 
