@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-sans-bold {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pt-sans-bold-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2em;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(70, 67, 67);
+  background-image: url(https://freepngimg.com/save/33301-spider-web-image/2399x2400);
+  background-size: 50%;
+  background-position: left;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+body #sing-in .container .form-group {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 15px;
+}
+body #sing-in .container .form-group h2 {
+  padding: 1em;
+  font-size: 1.8rem;
+  color: rgb(63, 248, 248);
+  letter-spacing: 2px;
+}
+body #sing-in .container .form-group .item-form {
+  padding: 0.5em 1em;
+  width: 100%;
+}
+body #sing-in .container .form-group .item-form input {
+  width: 100%;
+  padding: 0.7em;
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+}
+body #sing-in .container .form-group .item-form input:focus {
+  border-color: rgb(63, 248, 248);
+}
+body #sing-in .container .form-group .item-form input[type=submit] {
+  background-color: rgb(63, 248, 248);
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+body #sing-in .container .form-group .item-form input[type=submit]:hover {
+  opacity: 0.7;
+}/*# sourceMappingURL=style.css.map */
