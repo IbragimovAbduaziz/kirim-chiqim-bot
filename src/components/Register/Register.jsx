@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Registration() {
+export default function Register() {
   return (
    <section id="sing-in">
      <div className='container flex justify-center align-center'>

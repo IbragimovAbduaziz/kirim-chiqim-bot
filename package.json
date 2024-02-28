@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://kirim-chiqim-ombor.uz/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-deploy": "^0.0.15",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1"
   },
