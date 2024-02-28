@@ -9,10 +9,10 @@ export default function Nav() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/register">Korxona qo'shish</Link>
+            <Link to="/register">Ombor qo'shish</Link>
           </li>
           <li>
-            <Link to="/ombor">Ombor</Link>
+            <Link to="/ombor">Mavjud omborlar</Link>
           </li>
         </ul>
         </div>
