@@ -9,11 +9,20 @@
 body{
     background-color: rgb(70, 67, 67);
     background-image: url(https://freepngimg.com/save/33301-spider-web-image/2399x2400);
-    background-size: 50%;
-    background-position: left;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
+    #header{
+        .container{
+            h2{
+                text-align: center;
+                font-size: 3.5rem;
+                color: $aqua;
+            }
+        }
+    }
     #sing-in{
         .container{
             .form-group{
