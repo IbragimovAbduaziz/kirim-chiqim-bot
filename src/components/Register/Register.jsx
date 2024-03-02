@@ -4,15 +4,9 @@ const telegram=window.Telegram.WebApp
 
 export default function Register() {
   const [name,setName]=useState("")
-  const onSubmit=()=>{
-      if(name!=""){
-        onTelegram()
-      }
-  }
   useEffect(()=>{
     telegram.ready();
-    telegram.onEvent('mainButtonClicked',onSendData)
-  },[onSendData])
+  })
 
   const onTelegram=()=>{
     telegram.MainButton.text="Qo'shish.";
@@ -23,9 +17,18 @@ export default function Register() {
     telegram.sendData(JSON.stringify(name))
   },[name])
 
-  
+  useEffect(()=>{
+    telegram.onEvent('mainButtonClicked',onSendData)
+  },[onSendData])
+
   const handleName=(e)=>{
     setName(e.target.value)
+  }
+
+  const onSubmit=()=>{
+    if(name!=""){
+      onTelegram
+    }
   }
   return(
     <section id="register">
