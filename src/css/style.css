@@ -25,7 +25,6 @@ a {
   position: relative;
 }
 .container .blog img {
-  position: absolute;
   width: 20%;
   top: 5%;
   left: 50%;
