@@ -8,6 +8,12 @@ export default function Register() {
     telegram.ready();
   })
 
+  const onSubmit=()=>{
+    if(name!=""){
+      onTelegram()
+    }
+  }
+
   const onTelegram=()=>{
     console.log("salom");
     telegram.MainButton.text="Qo'shish.";
@@ -26,11 +32,7 @@ export default function Register() {
     setName(e.target.value)
   }
 
-  const onSubmit=()=>{
-    if(name!=""){
-      onTelegram
-    }
-  }
+
   return(
     <section id="register">
       <div className="container">
