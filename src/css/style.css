@@ -19,7 +19,6 @@ a {
 }
 .container .blog {
   width: 750px;
-  height: 80vh;
   padding: 1em;
   background-color: rgba(1, 1, 1, 0.79);
   border-radius: 25px;
