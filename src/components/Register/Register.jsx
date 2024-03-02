@@ -9,12 +9,13 @@ export default function Register() {
   })
 
   const onTelegram=()=>{
+    console.log("salom");
     telegram.MainButton.text="Qo'shish.";
     telegram.MainButton.show()
   }
 
   const onSendData=useCallback(()=>{
-    telegram.sendData(JSON.stringify(name))
+    telegram.sendData(name)
   },[name])
 
   useEffect(()=>{
