@@ -40,14 +40,12 @@ export default function Register() {
     <section id="register">
       <div className="container">
         <div className="blog">
-          <form onSubmit={result}>
             <div className="form-group">
               <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing" onChange={handleName}/>
-              <input type="submit" value="Qo'shish" />
+              <input type="button" value="Qo'shish" onClick={result}/>
             </div>
-          </form>
         </div>
       </div>
     </section>

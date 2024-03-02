@@ -75,7 +75,7 @@ body #register .container .blog form .form-group input::-moz-placeholder {
 body #register .container .blog form .form-group input::placeholder {
   font-style: italic;
 }
-body #register .container .blog form .form-group input[type=submit] {
+body #register .container .blog form .form-group input[type=button] {
   width: auto;
   background-color: #020202;
   color: #C5C5C5;
