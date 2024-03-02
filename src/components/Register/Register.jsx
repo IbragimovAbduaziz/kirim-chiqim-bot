@@ -17,7 +17,7 @@ export default function Register() {
 
   const onSendData=useCallback(()=>{
     console.log(name);
-    telegram.sendData(name)
+    telegram.sendData(JSON.stringify(name))
   },[name])
 
   useEffect(()=>{
