@@ -8,9 +8,9 @@ export default function Register() {
     <section id="register">
       <div className="container">
         <div className="blog">
-          <img src={house}/>
           <form>
             <div className="form-group">
+              <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing" />
               <input type="submit" value="Qo'shish" />
