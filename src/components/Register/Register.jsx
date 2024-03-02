@@ -16,6 +16,7 @@ export default function Register() {
   }
 
   const onSendData=useCallback(()=>{
+    console.log(name);
     telegram.sendData(name)
   },[name])
 
