@@ -9,6 +9,7 @@ export default function Register() {
   })
 
   const result=()=>{
+    console.log(name);
     if(name!=""){
       onTelegram
     }
