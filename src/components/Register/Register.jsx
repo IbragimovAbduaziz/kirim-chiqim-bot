@@ -9,14 +9,12 @@ export default function Register() {
   })
 
   const result=()=>{
-    console.log(name);
     if(name!=""){
-      onTelegram
+      onTelegram()
     }
   }
 
   const onTelegram=()=>{
-    console.log("salom");
     telegram.MainButton.text="Qo'shish.";
     telegram.MainButton.show()
   }

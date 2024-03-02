@@ -80,10 +80,10 @@ body #register .container .blog .form-group input[type=button] {
 }
 
 @media screen and (max-width: 768px) {
-  #register .container .blog form .form-group h3 {
+  #register .container .blog .form-group h3 {
     font-size: 1.2rem !important;
   }
-  #register .container .blog form .form-group input {
+  #register .container .blog .form-group input {
     padding: 0.5em !important;
     font-size: 1.1rem !important;
   }
