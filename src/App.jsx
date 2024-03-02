@@ -2,6 +2,7 @@ import './css/style.css';
 import Registration from './components/Register/Register';
 import Ombor from './components/Ombor/Ombor';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <>
