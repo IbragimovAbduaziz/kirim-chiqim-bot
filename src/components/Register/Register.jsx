@@ -8,15 +8,11 @@ export default function Register() {
     telegram.ready();
   })
 
-  const result=()=>{
-    if(name!=""){
-      onTelegram()
-    }
-  }
-
   const onTelegram=()=>{
-    telegram.MainButton.text="Qo'shish.";
-    telegram.MainButton.show()
+    if(name!=""){
+      telegram.MainButton.text="Qo'shish.";
+      telegram.MainButton.show()
+    }
   }
 
   const onSendData=useCallback(()=>{
@@ -42,7 +38,7 @@ export default function Register() {
               <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing" onChange={handleName}/>
-              <input type="button" value="Qo'shish" onClick={result}/>
+              <input type="button" value="Qo'shish" onClick={onTelegram}/>
             </div>
         </div>
       </div>
