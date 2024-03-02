@@ -1,184 +1,98 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.pt-sans-regular {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+a {
+  text-decoration: none;
+  display: block;
 }
 
-.pt-sans-regular-italic {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.pt-sans-bold {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.pt-sans-bold-italic {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+.shadow, .container .blog {
+  box-shadow: 0px 0px 10px gray;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 2em;
-}
-
-.flex {
+  padding: 1em;
+  padding-top: 10%;
   display: flex;
-}
-
-.justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.align-center {
   align-items: center;
+  height: 100vh;
+}
+.container .blog {
+  width: 750px;
+  height: 80vh;
+  padding: 1em;
+  background-color: rgba(1, 1, 1, 0.79);
+  border-radius: 25px;
+  position: relative;
+}
+.container .blog img {
+  position: absolute;
+  width: 20%;
+  top: 5%;
+  left: 50%;
+  margin-left: -10%;
 }
 
-.direction-column {
-  flex-direction: column;
-}
-
-.h-title-b {
-  font-size: 3rem;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
-.h-title-m {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 1em !important;
-  }
-  .h-title-b {
-    font-size: 1.8rem !important;
-  }
-  .h-title-m {
-    font-size: 1.2rem !important;
-  }
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Sans";
 }
 
 body {
-  background-color: rgb(43, 43, 28);
-  background-image: url(https://freepngimg.com/save/33301-spider-web-image/2399x2400);
-  background-size: cover;
-  background-position: center;
+  background-color: #C5C5C5;
+  background-image: url(../../public/warehouse.png);
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
-body #nav .container ul {
-  list-style: none;
+body #register .container .blog form {
+  height: 100%;
+}
+body #register .container .blog form .form-group {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 0.5em;
+}
+body #register .container .blog form .form-group h3 {
   text-align: center;
-}
-body #nav .container ul li {
-  display: inline-block;
-  margin: 0.5em;
-}
-body #nav .container ul li a {
-  display: block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: aqua;
-  background-color: rgba(0, 0, 0, 0.913);
-}
-body #nav .container ul li a:hover {
-  background-color: red;
-}
-body #header .container h2 {
-  text-align: center;
-  color: rgb(63, 248, 248);
-}
-body #header .container h3 {
-  text-align: center;
-  color: rgb(245, 35, 35);
-}
-body #sing-in .container .form-group {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2em;
-  border-radius: 15px;
-}
-body #sing-in .container .form-group h2 {
-  text-align: center;
-  padding: 1em;
   font-size: 1.8rem;
-  color: rgb(63, 248, 248);
-  letter-spacing: 2px;
-}
-body #sing-in .container .form-group .item-form {
+  color: white;
+  width: 100%;
   padding: 1em;
-  width: 100%;
 }
-body #sing-in .container .form-group .item-form input {
+body #register .container .blog form .form-group input {
   width: 100%;
-  padding: 0.7em;
-  background-color: transparent;
-  border: 1px solid white;
+  padding: 1em;
+  font-size: 1.4rem;
   outline: none;
-  color: white;
+  border: 1px solid #0BDDF6;
+  box-shadow: 0px 0px 10px gray;
 }
-body #sing-in .container .form-group .item-form input:focus {
-  border-color: rgb(63, 248, 248);
+body #register .container .blog form .form-group input::-moz-placeholder {
+  font-style: italic;
 }
-body #sing-in .container .form-group .item-form input[type=submit] {
-  background-color: rgb(63, 248, 248);
-  border: none;
-  cursor: pointer;
+body #register .container .blog form .form-group input::placeholder {
+  font-style: italic;
+}
+body #register .container .blog form .form-group input[type=submit] {
   width: auto;
-}
-body #sing-in .container .form-group .item-form input[type=submit]:hover {
-  opacity: 0.7;
-}
-body #warehouse .container .blog {
-  gap: 1em;
-}
-body #warehouse .container .blog input {
-  padding: 1em 2em;
-  background-color: rgba(0, 0, 0, 0.867);
-  color: white;
-  border: none;
-  outline: none;
-}
-body #warehouse .container .blog input:hover {
-  background-color: red;
+  background-color: #020202;
+  color: #C5C5C5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-  #sing-in .container .form-group {
-    width: 90% !important;
-    padding: 1em !important;
-  }
-  #sing-in .container .form-group h2 {
-    padding: 0.5em !important;
+  #register .container .blog form .form-group h3 {
     font-size: 1.2rem !important;
+  }
+  #register .container .blog form .form-group input {
+    padding: 0.5em !important;
+    font-size: 1.1rem !important;
   }
 }/*# sourceMappingURL=style.css.map */

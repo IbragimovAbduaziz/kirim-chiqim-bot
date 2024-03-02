@@ -1,124 +1,80 @@
 @import './vars';
 @import './parts';
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PT Sans';
 }
 body{
-    background-color: rgb(43, 43, 28);
-    background-image: url(https://freepngimg.com/save/33301-spider-web-image/2399x2400);
-    background-size: cover;
-    background-position: center;
+    background-color: $light;
+    background-image: url(../../public/warehouse.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
     width: 100%;
-    height: 100vh;
-    #nav{
-        .container{
-            ul{
-                list-style: none;
-                text-align: center;
-                li{
-                    display: inline-block;
-                    margin: .5em;
-                    a{
-                        display: block;
-                        padding: .5em 1em;
-                        text-decoration: none;
-                        color: aqua;
-                        background-color: rgba(0, 0, 0, 0.913);
-                        &:hover{
-                            background-color: red;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    #header{
-        .container{
-            h2{
-                text-align: center;
-                color: $aqua;
-            }
-            h3{
-                text-align: center;
-                color: $red;
-            }
-        }
-    }
-    #sing-in{
-        .container{
-            .form-group{
-                background-color: rgba(0,0,0,.5);
-                padding: 2em;
-                border-radius: 15px;
-                h2{
-                    text-align: center;
-                    padding: 1em;
-                    font-size: 1.8rem;
-                    color: $aqua;
-                    letter-spacing: 2px;
-                }
-                .item-form{
-                    padding:1em;
-                    width: 100%;
-                    input{
-                        width: 100%;
-                        padding: .7em;
-                        background-color: transparent;
-                        border:1px solid white;
-                        outline: none;
-                        color: white;
-                        &:focus{
-                            border-color: $aqua;
-                        }
-                    }
-                    input[type=submit]{
-                        background-color:$aqua;
-                        border: none;
-                        cursor: pointer;
-                        width: auto;
-                        &:hover{
-                            opacity: .7;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    #warehouse{
+    min-height: 100vh;
+    #register{
         .container{
             .blog{
-                gap: 1em;
-                input{
-                    padding: 1em 2em;
-                    background-color: rgba(0, 0, 0, 0.867);
-                    color: white;
-                    border:none;
-                    outline: none;
-                    &:hover{
-                        background-color: red;
+                form{
+                    height: 100%;
+                    .form-group{
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+                        flex-direction: column;
+                        gap: .5em;
+                        h3{
+                            text-align: center;
+                            font-size: 1.8rem;
+                            color: white;
+                            width: 100%;
+                            padding: 1em;
+
+                        }
+                        input{
+                            width: 100%;
+                            padding: 1em;
+                            font-size: 1.4rem;
+                            outline: none;
+                            border: 1px solid $aqua;
+                            box-shadow: 0px 0px 10px gray;
+                            &::placeholder{
+                                font-style: italic;
+                            }
+                        }
+                        input[type=submit]{
+                            width: auto;
+                            background-color: $dark;
+                            color: $light;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
         }
     }
 }
+
 @media screen and (max-width:768px){
-    #sing-in{
+    #register{
         .container{
-            .form-group{
-                width: 90% !important;
-                padding: 1em !important;
-                h2{
-                    padding: .5em !important;
-                    font-size: 1.2rem !important;
+            .blog{
+                form{
+                    .form-group{
+                        h3{
+                            font-size: 1.2rem !important;
+
+                        }
+                        input{
+                            padding: .5em !important;
+                            font-size: 1.1rem !important;
+                        }
+                    }
                 }
             }
         }
-    }    
+    }
+    
 }
-

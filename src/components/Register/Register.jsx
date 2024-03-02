@@ -1,23 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import axios from 'axios'
+import house from '../../../public/house.png';
 export default function Register() {
   const [searchParams, setSearchParams] = useSearchParams()
-  return (
-   <section id="sing-in">
-     <div className='container flex justify-center align-center'>
-      <div className="form-group flex direction-column">
-          <h2><div>Tutorial: {searchParams.get('id')}</div></h2>
-          <h2 className='pt-sans-bold'>Ombor yoki do'kon qo'shish.</h2>
+  return(
+    <section id="register">
+      <div className="container">
+        <div className="blog">
+          <img src={house}/>
           <form>
-              <div className="item-form">
-                <input type="text" name="name" placeholder='Omborga nom bering ixtiyori..'/>
-              </div>
-              <div className="item-form">
-                <input type="submit" value="Qo'shish"/>
-                </div>
+            <div className="form-group">
+              <h3>Ombor yoki do'kon qo'shish!</h3>
+              <input type="text" placeholder="Ombor nomini qo'shing" />
+              <input type="submit" value="Qo'shish" />
+            </div>
           </form>
+        </div>
       </div>
-    </div>
-   </section>
+    </section>
   )
 }
