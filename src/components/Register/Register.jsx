@@ -15,7 +15,7 @@ export default function Register() {
   }
 
   useEffect(()=>{
-    telegram.onEvent('mainButtonClicked', ()=>telegram.sendData(JSON.stringify(name)));
+    telegram.onEvent('mainButtonClicked',()=>telegram.sendData(JSON.stringify(name)));
     return ()=>telegram.offEvent('mainButtonClicked',()=>telegram.sendData(JSON.stringify(name)));
   })
   return(
