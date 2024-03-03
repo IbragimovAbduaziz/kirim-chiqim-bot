@@ -21,7 +21,7 @@ export default function Register() {
   useEffect(()=>{
     telegram.onEvent('mainButtonClicked', onSendData);
     return ()=>telegram.offEvent('mainButtonClicked',onSendData);
-  },[onSendData])
+  },[])
 
   const handleName=(e)=>{
     setName(e.target.value)
