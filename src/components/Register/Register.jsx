@@ -17,7 +17,7 @@ export default function Register() {
   useEffect(()=>{
     telegram.onEvent('mainButtonClicked', ()=>telegram.sendData(JSON.stringify(name)));
     return ()=>telegram.offEvent('mainButtonClicked',()=>telegram.sendData(JSON.stringify(name)));
-  },[handleName])
+  })
   return(
     <section id="register">
       <div className="container">
@@ -26,7 +26,7 @@ export default function Register() {
               <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing" onChange={handleName}/>
-              <input type="button" value="Qo'shish" onClick={onTelegram}/>
+              <input type="button" value="Qo'shish"/>
             </div>
         </div>
       </div>
