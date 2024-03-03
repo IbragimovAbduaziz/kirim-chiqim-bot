@@ -7,24 +7,17 @@ export default function Register() {
   useEffect(()=>{
     telegram.ready();
   })
-  const onTelegram=()=>{
-    if(name!=""){
-      telegram.MainButton.text="Qo'shish.";
-      telegram.MainButton.show()
-    }
+    
+  const handleName=(e)=>{
+    setName(e.target.value)
+    telegram.MainButton.text="Qo'shish.";
+    telegram.MainButton.show()
   }
 
-  
   useEffect(()=>{
     telegram.onEvent('mainButtonClicked', ()=>telegram.sendData(JSON.stringify(name)));
     return ()=>telegram.offEvent('mainButtonClicked',()=>telegram.sendData(JSON.stringify(name)));
-  },[])
-
-  const handleName=(e)=>{
-    setName(e.target.value)
-  }
-
-
+  },[handleName])
   return(
     <section id="register">
       <div className="container">
