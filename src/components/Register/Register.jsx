@@ -21,7 +21,6 @@ export default function Register() {
 
   useEffect(()=>{
     telegram.onEvent('mainButtonClicked', onSendData);
-    console.log("salom");
     return ()=>telegram.offEvent('mainButtonClicked',onSendData);
   },[onSendData])
 
