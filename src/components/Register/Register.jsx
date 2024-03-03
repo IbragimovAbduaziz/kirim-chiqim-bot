@@ -14,13 +14,10 @@ export default function Register() {
     }
   }
 
-  const onSendData=useCallback(()=>{
-    telegram.sendData(JSON.stringify(name))
-  },[name])
-
+  
   useEffect(()=>{
-    telegram.onEvent('mainButtonClicked', onSendData);
-    return ()=>telegram.offEvent('mainButtonClicked',onSendData);
+    telegram.onEvent('mainButtonClicked', ()=>telegram.sendData(JSON.stringify(name)));
+    return ()=>telegram.offEvent('mainButtonClicked',()=>telegram.sendData(JSON.stringify(name)));
   },[])
 
   const handleName=(e)=>{
