@@ -15,14 +15,15 @@ function App() {
     setWarehouse(e.target.value)
   }
   const sendWare=()=>{
-    tg.mainButton.text="Qoshish :)"
-    tg.mainButton.show()
+    console.log("salom");
+    tg.MainButton.text="Qoshish :)"
+    tg.MainButton.show()
   }
   return (
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="register" element={<Registration warehouse={warehouse} handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="register" element={<Registration  handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="ombor" element={<Ombor />} />
       </Routes>
     </BrowserRouter>

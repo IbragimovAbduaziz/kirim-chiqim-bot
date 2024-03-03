@@ -1,6 +1,6 @@
 import house from '../../../public/house.png';
 
-export default function Register({warehouse,handleWare,sendWare}) {
+export default function Register({handleWare,sendWare}) {
   return(
     <section id="register">
       <div className="container">
