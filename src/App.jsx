@@ -27,7 +27,6 @@ function App() {
 
   useEffect(()=>{
     tg.onEvent('mainButtonClicked',onsendData)
-    return ()=> tg.offEvent('mainButtonClicked',onsendData)
   },[onsendData])
   return (
     <>
