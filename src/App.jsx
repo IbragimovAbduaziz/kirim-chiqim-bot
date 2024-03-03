@@ -2,7 +2,7 @@ import './css/style.css';
 import Registration from './components/Register/Register';
 import Ombor from './components/Ombor/Ombor';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const tg=window.Telegram.WebApp
 
@@ -15,10 +15,20 @@ function App() {
     setWarehouse(e.target.value)
   }
   const sendWare=()=>{
-    console.log("salom");
-    tg.MainButton.text="Qoshish :)"
-    tg.MainButton.show()
+    if(warehouse!=""){
+      tg.MainButton.text="Qoshish :)"
+      tg.MainButton.show()
+    }
   }
+
+  const onsendData=useCallback(()=>{
+    tg.sendData(warehouse)
+  },[warehouse])
+
+  useEffect(()=>{
+    tg.onEvent('mainButtonClicked',onsendData)
+    return ()=> tg.offEvent('mainButtonClicked',onsendData)
+  },[onsendData])
   return (
     <>
      <BrowserRouter>
