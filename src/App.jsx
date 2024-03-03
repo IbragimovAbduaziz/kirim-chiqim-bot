@@ -26,7 +26,8 @@ function App() {
   },[warehouse])
 
   useEffect(()=>{
-    tg.onEvent('mainButtonClicked',onsendData)
+    tg.onEvent('mainButtonClicked', onsendData)
+    return ()=> tg.offEvent('mainButtonClicked', onsendData)
   },[onsendData])
   return (
     <>
