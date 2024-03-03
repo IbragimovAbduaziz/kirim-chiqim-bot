@@ -15,17 +15,16 @@ export default function Register() {
     }
   }
 
-  const onSendData=useCallback(()=>{
+ { /*const onSendData=useCallback(()=>{
     telegram.sendData(JSON.stringify(name))
-  },[name])
+  },[name]) */}
 
   useEffect(()=>{
-    telegram.onEvent('mainButtonClicked', onSendData);
+    telegram.MainButton.onClick(()=>telegram.sendData(JSON.stringify(name)))
     return ()=>telegram.offEvent('mainButtonClicked',onSendData);
-  },[onSendData])
+  },[])
 
   const handleName=(e)=>{
-    console.log(e.target.value);
     setName(e.target.value)
   }
 
