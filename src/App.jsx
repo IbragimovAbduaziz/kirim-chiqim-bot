@@ -8,7 +8,7 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="register" element={<Registration />} />
+          <Route path="/" element={<Registration />} />
           <Route path="ombor" element={<Ombor />} />
       </Routes>
     </BrowserRouter>

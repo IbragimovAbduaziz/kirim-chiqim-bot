@@ -7,7 +7,6 @@ export default function Register() {
   useEffect(()=>{
     telegram.ready();
   })
-
   const onTelegram=()=>{
     if(name!=""){
       telegram.MainButton.text="Qo'shish.";
@@ -15,14 +14,14 @@ export default function Register() {
     }
   }
 
- { /*const onSendData=useCallback(()=>{
+  const onSendData=useCallback(()=>{
     telegram.sendData(JSON.stringify(name))
-  },[name]) */}
+  },[name])
 
   useEffect(()=>{
-    telegram.MainButton.onClick(()=>telegram.sendData(JSON.stringify(name)))
+    telegram.onEvent('mainButtonClicked', onSendData);
     return ()=>telegram.offEvent('mainButtonClicked',onSendData);
-  },[])
+  },[onSendData])
 
   const handleName=(e)=>{
     setName(e.target.value)
