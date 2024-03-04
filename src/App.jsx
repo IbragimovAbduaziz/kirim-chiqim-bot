@@ -22,7 +22,7 @@ function App() {
   }
 
   const onsendData=useCallback(()=>{
-    tg.sendData(JSON.stringify(warehouse))
+    tg.sendData(JSON.stringify({warehouse}))
   },[warehouse])
 
   useEffect(()=>{
