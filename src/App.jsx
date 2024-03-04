@@ -26,9 +26,9 @@ function App() {
   },[warehouse])
 
   useEffect(()=>{
-    tg.onEvent('mainButtonClicked', onsendData)
-    return ()=> tg.offEvent('mainButtonClicked', onsendData)
-  },[onsendData])
+    tg.onEvent('mainButtonClicked', tg.sendData(JSON.stringify({warehouse})))
+    return ()=> tg.offEvent('mainButtonClicked', tg.sendData(JSON.stringify({warehouse})))
+  },[])
   return (
     <>
      <BrowserRouter>
