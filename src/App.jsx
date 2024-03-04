@@ -23,8 +23,7 @@ function App() {
   }
 
   const onSendData = useCallback(()=>{
-      tg.sendData(JSON.stringify(["salom"]))
-      setErr("okkkkkkkk")
+      tg.sendData(JSON.stringify(warehouse))
   },[warehouse])
     
   useEffect(()=>{
@@ -35,7 +34,7 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="register" element={<Registration err={err} handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="register" element={<Registration  handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="ombor" element={<Ombor />} />
       </Routes>
     </BrowserRouter>
