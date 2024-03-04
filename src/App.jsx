@@ -22,7 +22,12 @@ function App() {
   }
 
   const onsendData = useCallback(()=>{
-    tg.sendMessage(warehouse)
+    try {
+      tg.sendData(warehouse)
+      console.log(warehouse);
+    } catch (error) {
+      console.log(error);
+    }
   },[warehouse])
 
   useEffect(()=>{
