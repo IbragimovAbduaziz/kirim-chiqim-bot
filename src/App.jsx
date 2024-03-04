@@ -23,15 +23,15 @@ function App() {
     }
   }
 
-  const onsendData = useCallback(()=>{
+  const onSendData = useCallback(()=>{
       tg.sendData(JSON.stringify(["salom"]))
       setErr("okkkkkkkk")
   },[])
     
   useEffect(()=>{
-    tg.onEvent('mainButtonClicked', onsendData)
-    return ()=> tg.offEvent('mainButtonClicked', onsendData)
-  },[onsendData])
+    tg.onEvent('mainButtonClicked', onSendData)
+    return ()=> tg.offEvent('mainButtonClicked', onSendData)
+  },[onSendData])
   return (
     <>
      <BrowserRouter>
