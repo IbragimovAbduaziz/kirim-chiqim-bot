@@ -23,7 +23,7 @@ function App() {
   }
 
   const onsendData = useCallback(async()=>{
-      await tg.sendData(warehouse)
+      await tg.sendData(JSON.stringify(warehouse))
       tg.MainButton.hide()
   },[warehouse])
 
