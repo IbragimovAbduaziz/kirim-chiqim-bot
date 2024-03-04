@@ -8,6 +8,7 @@ const tg=window.Telegram.WebApp
 
 function App() {
   const [warehouse,setWarehouse]=useState("")
+  const [err,setErr]=useState("")
   useEffect(()=>{
       tg.ready()
   })
@@ -38,7 +39,7 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="register" element={<Registration  handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="register" element={<Registration err={err} handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="ombor" element={<Ombor />} />
       </Routes>
     </BrowserRouter>

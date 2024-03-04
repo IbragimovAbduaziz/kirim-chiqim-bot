@@ -1,11 +1,12 @@
 import house from '../../../public/house.png';
 
-export default function Register({handleWare,sendWare}) {
+export default function Register({err,handleWare,sendWare}) {
   return(
     <section id="register">
       <div className="container">
         <div className="blog">
             <div className="form-group">
+              <h4>{err}</h4>
               <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing" onChange={handleWare}/>
