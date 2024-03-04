@@ -25,9 +25,9 @@ function App() {
   const onsendData = useCallback(()=>{
     try {
       tg.sendData(warehouse)
-      console.log(warehouse);
+      setErr(warehouse)
     } catch (error) {
-      console.log(error);
+      setErr(error)
     }
   },[warehouse])
 
