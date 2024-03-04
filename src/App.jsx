@@ -14,7 +14,6 @@ function App() {
   })
   const handleWare=(e)=>{
     setWarehouse({name:e.target.value})
-    setErr(warehouse.name)
   }
   const sendWare=()=>{
     if(warehouse!=""){
@@ -26,12 +25,12 @@ function App() {
   const onSendData = useCallback(()=>{
       tg.sendData(JSON.stringify(["salom"]))
       setErr("okkkkkkkk")
-  },[])
+  },[warehouse])
     
   useEffect(()=>{
-    tg.MainButton.onClick(()=>tg.sendData(JSON.stringify(["salom"])))
-    return ()=> tg.MainButton.onClick(()=>tg.sendData(JSON.stringify(["salom"])))
-  },[])
+    tg.onEvent('mainButtonClicked', onSendData)
+    return ()=> tg.offEvent('mainButtonClicked', onSendData)
+  },[onSendData])
   return (
     <>
      <BrowserRouter>
