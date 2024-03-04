@@ -7,13 +7,13 @@ import { useCallback, useEffect, useState } from 'react';
 const tg=window.Telegram.WebApp
 
 function App() {
-  const [warehouse,setWarehouse]=useState("")
+  const [warehouse,setWarehouse]=useState([])
   const [err,setErr]=useState("")
   useEffect(()=>{
       tg.ready()
   })
   const handleWare=(e)=>{
-    setWarehouse(e.target.value)
+    setWarehouse({...warehouse, name:e.target.value})
   }
   const sendWare=()=>{
     if(warehouse!=""){
@@ -23,8 +23,8 @@ function App() {
   }
 
   const onsendData = useCallback(()=>{
-      tg.sendData({warehouse:warehouse})
-      setErr({warehouse:warehouse})
+      tg.sendData(JSON.stringify(warehouse))
+      setErr(warehouse)
   },[])
     
   useEffect(()=>{
