@@ -22,13 +22,9 @@ function App() {
     }
   }
 
-  const onsendData = useCallback(()=>{
-    try {
-      tg.sendData(warehouse)
-      setErr(warehouse)
-    } catch (error) {
-      setErr(error)
-    }
+  const onsendData = useCallback(async()=>{
+      await tg.sendData(warehouse)
+      tg.MainButton.hide()
   },[warehouse])
 
   useEffect(()=>{
