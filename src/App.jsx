@@ -15,6 +15,7 @@ function App() {
     setWarehouse(e.target.value)
   }
   const sendWare=()=>{
+    tg.sendData("salom")
     if(warehouse!=""){
       tg.MainButton.text="Qoshish :)"
       tg.MainButton.show()
