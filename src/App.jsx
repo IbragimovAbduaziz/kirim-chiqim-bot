@@ -15,7 +15,6 @@ function App() {
     setWarehouse(e.target.value)
   }
   const sendWare=()=>{
-    tg.sendData("salom")
     if(warehouse!=""){
       tg.MainButton.text="Qoshish :)"
       tg.MainButton.show()
@@ -24,7 +23,7 @@ function App() {
 
   const onsendData = useCallback(()=>{
     tg.sendData(warehouse)
-    tg.MainButton.text=`${warehouse}`
+    tg.close()
   },[warehouse])
 
   useEffect(()=>{
