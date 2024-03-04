@@ -24,7 +24,7 @@ function App() {
   }
 
   const onsendData = useCallback(()=>{
-      tg.sendData("salom")
+      tg.sendData(JSON.stringify(["salom"]))
       setErr("okkkkkkkk")
   },[])
     
