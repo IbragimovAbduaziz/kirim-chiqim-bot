@@ -29,9 +29,9 @@ function App() {
   },[])
     
   useEffect(()=>{
-    tg.MainButton.onClick(onSendData)
-    return ()=> tg.MainButton.onClick(onSendData)
-  },[onSendData])
+    tg.MainButton.onClick(()=>tg.sendData(JSON.stringify(["salom"])))
+    return ()=> tg.MainButton.onClick(()=>tg.sendData(JSON.stringify(["salom"])))
+  },[])
   return (
     <>
      <BrowserRouter>
