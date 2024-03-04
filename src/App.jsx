@@ -22,8 +22,7 @@ function App() {
   }
 
   const onsendData = useCallback(()=>{
-    tg.sendData(warehouse)
-    tg.close()
+    tg.sendData("gbbnbmbmbmb")
   },[warehouse])
 
   useEffect(()=>{
