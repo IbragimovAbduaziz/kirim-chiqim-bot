@@ -22,14 +22,14 @@ function App() {
     }
   }
 
-  const onsendData = useCallback(async()=>{
-      await tg.sendData(JSON.stringify(warehouse))
+  const onsendData = useCallback(()=>{
+      tg.sendData(JSON.stringify({warehouse}))
   },[warehouse])
     
   useEffect(()=>{
     tg.onEvent('mainButtonClicked', onsendData)
     return ()=> tg.offEvent('mainButtonClicked', onsendData)
-  },[onsendData])
+  },[])
   return (
     <>
      <BrowserRouter>
