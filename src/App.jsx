@@ -21,9 +21,9 @@ function App() {
     }
   }
 
-  const onsendData=useCallback(()=>{
-    tg.sendData(JSON.stringify({ware:warehouse}))
-    tg.MainButton.text="ok :)"
+  const onsendData = useCallback(()=>{
+    tg.sendData(warehouse)
+    tg.MainButton.text=`${warehouse}`
   },[warehouse])
 
   useEffect(()=>{
