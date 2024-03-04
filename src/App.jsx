@@ -20,16 +20,15 @@ function App() {
       tg.MainButton.show()
     }
   }
-  const ok=()=>{
-    tg.MainButton.text="ok :)"
-  }
+
   const onsendData=useCallback(()=>{
-    tg.sendData(JSON.stringify({warehouse}))
+    tg.sendData(JSON.stringify({ware:warehouse}))
+    tg.MainButton.text="ok :)"
   },[warehouse])
 
   useEffect(()=>{
-    tg.onEvent('mainButtonClicked', ok)
-    return ()=> tg.offEvent('mainButtonClicked', ok)
+    tg.onEvent('mainButtonClicked', onsendData)
+    return ()=> tg.offEvent('mainButtonClicked', onsendData)
   },[onsendData])
   return (
     <>
