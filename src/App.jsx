@@ -24,9 +24,8 @@ function App() {
 
   const onsendData = useCallback(async()=>{
       await tg.sendData(JSON.stringify(warehouse))
-      tg.MainButton.hide()
   },[warehouse])
-
+    
   useEffect(()=>{
     tg.onEvent('mainButtonClicked', onsendData)
     return ()=> tg.offEvent('mainButtonClicked', onsendData)
