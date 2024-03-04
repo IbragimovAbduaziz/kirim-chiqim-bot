@@ -24,12 +24,13 @@ function App() {
 
   const onsendData = useCallback(()=>{
       tg.sendData(JSON.stringify({warehouse}))
-  },[warehouse])
+      setErr(JSON.stringify({warehouse}))
+  },[])
     
   useEffect(()=>{
     tg.onEvent('mainButtonClicked', onsendData)
     return ()=> tg.offEvent('mainButtonClicked', onsendData)
-  },[])
+  },[onsendData])
   return (
     <>
      <BrowserRouter>
