@@ -24,7 +24,7 @@ function App() {
 
   const onsendData = useCallback(()=>{
       tg.sendData(JSON.stringify(warehouse))
-      setErr(warehouse)
+      setErr(JSON.stringify(warehouse))
   },[])
     
   useEffect(()=>{
