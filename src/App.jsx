@@ -20,15 +20,17 @@ function App() {
       tg.MainButton.show()
     }
   }
-
+  const ok=()=>{
+    tg.MainButton.text="ok :)"
+  }
   const onsendData=useCallback(()=>{
     tg.sendData(JSON.stringify({warehouse}))
   },[warehouse])
 
   useEffect(()=>{
-    tg.onEvent('mainButtonClicked', tg.sendData(JSON.stringify({warehouse})))
-    return ()=> tg.offEvent('mainButtonClicked', tg.sendData(JSON.stringify({warehouse})))
-  },[])
+    tg.onEvent('mainButtonClicked', ok)
+    return ()=> tg.offEvent('mainButtonClicked', ok)
+  },[onsendData])
   return (
     <>
      <BrowserRouter>
