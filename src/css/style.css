@@ -87,4 +87,18 @@ body #register .container .blog .form-group input[type=button] {
     padding: 0.5em !important;
     font-size: 1.1rem !important;
   }
+  #warehouse .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  #warehouse .container button {
+    padding: 0.5em 1.5em;
+    border: none;
+    outline: none;
+    background-color: #020202;
+    color: #0BDDF6;
+  }
 }/*# sourceMappingURL=style.css.map */

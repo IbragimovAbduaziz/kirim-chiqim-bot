@@ -3,15 +3,14 @@ import axios from 'axios'
 import { useSearchParams } from "react-router-dom";
 export default function Warehouse() {
   let [searchParams, setSearchParams] = useSearchParams();
-  let [wares,setWares]=useState("")
+  let [wares,setWares]=useState([])
   const id = searchParams.get('id')
   console.log(searchParams);
     useEffect(()=>{
-      axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
-      //axios.get(`http://localhost:5757/${id}`)
+      //axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
+      axios.get(`http://localhost:5757/${id}`)
       .then(data=>{
-          setWares(JSON.stringify(data.data))
-          console.log(data.data);
+          setWares(data.data)
       })
       .catch(err=>{
         console.log("xatooooooo"+err);
@@ -19,8 +18,11 @@ export default function Warehouse() {
   return (
     <section id="warehouse">
       <div className="container">
-        {JSON.stringify(wares)}
-        {/*wares.map(ware=>(<button key={ware._id}>{ware.name}</button>))*/}
+      {wares.map(ware=> (
+        <button key={ware._id}>
+          {ware.name}
+        </button>
+      ))}
       </div>
     </section>
   )
