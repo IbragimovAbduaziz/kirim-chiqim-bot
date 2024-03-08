@@ -4,24 +4,23 @@ import { useSearchParams } from "react-router-dom";
 export default function Warehouse() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [wares,setWares]=useState("")
-  function handleSubmit(event) {
-    event.preventDefault();
-    let params = serializeFormQuery(event.target);
-    setSearchParams(params);
+  const id = searchParams.get('id')
+  console.log(searchParams);
     useEffect(()=>{
-      axios.get(`https://kirim-chiqim-ombor.uz/${searchParams}`)
-      .then((data=>{
-          setWares(JSON.stringify(date))
-      }))
-      .catch(err=>{
-        console.log(err);
+      //axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
+      axios.get(`http://localhost:5757/${id}`)
+      .then(data=>{
+          setWares(JSON.stringify(data.data))
+          console.log(data.data);
       })
-    })
-  }
+      .catch(err=>{
+        console.log("xatooooooo"+err);
+      })},[searchParams])
   return (
     <section id="warehouse">
       <div className="container">
-        
+        {wares}
+        {/*wares.map(ware=>(<button key={ware._id}>{ware.name}</button>))*/}
       </div>
     </section>
   )
