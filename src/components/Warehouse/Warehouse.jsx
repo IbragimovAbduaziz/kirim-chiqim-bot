@@ -7,8 +7,8 @@ export default function Warehouse() {
   const id = searchParams.get('id')
   console.log(searchParams);
     useEffect(()=>{
-      //axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
-      axios.get(`http://localhost:5757/${id}`)
+      axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
+      //axios.get(`http://localhost:5757/${id}`)
       .then(data=>{
           setWares(data.data)
       })
