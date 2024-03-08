@@ -78,12 +78,14 @@ body{
             align-items: center;
             flex-direction: column;
             gap:.5em;
-            button{
-                padding: .5em 1.5em;
-                border: none;
-                outline: none;
-                background-color: $dark;
-                color: $aqua;
+            a{
+                button{
+                    padding: .5em 1.5em;
+                    border: none;
+                    outline: none;
+                    background-color: $dark;
+                    color: $aqua;
+                }
             }
         }
     }

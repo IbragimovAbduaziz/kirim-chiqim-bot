@@ -94,7 +94,7 @@ body #register .container .blog .form-group input[type=button] {
     flex-direction: column;
     gap: 0.5em;
   }
-  #warehouse .container button {
+  #warehouse .container a button {
     padding: 0.5em 1.5em;
     border: none;
     outline: none;

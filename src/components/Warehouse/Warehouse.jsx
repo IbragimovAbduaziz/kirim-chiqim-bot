@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams,Outlet, Link } from "react-router-dom";
 export default function Warehouse() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [wares,setWares]=useState([])
@@ -19,9 +19,11 @@ export default function Warehouse() {
     <section id="warehouse">
       <div className="container">
       {wares.map(ware=> (
-        <button key={ware._id}>
-          {ware.name}
-        </button>
+        <Link to={`/view?id=${ware._id}`}>
+          <button key={ware._id}>
+            {ware.name}
+          </button>
+        </Link>
       ))}
       </div>
     </section>
