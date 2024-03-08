@@ -1,6 +1,7 @@
 import './css/style.css';
-import Registration from './components/Register/Register';
-import Ombor from './components/Ombor/Ombor';
+import AddWarehouse from './components/Warehouse/Addwarehouse';
+import Allwarehouse from './components/Warehouse/All';
+import Warehouse from './components/Warehouse/Warehouse';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useCallback, useEffect, useState } from 'react';
 
@@ -34,8 +35,9 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="register" element={<Registration  handleWare={handleWare} sendWare={sendWare} />} />
-          <Route path="ombor" element={<Ombor />} />
+          <Route path="addwarehouse" element={<AddWarehouse  handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="warehouse" element={<Warehouse />} />
+          <Route path="addwarehouse" element={<Allwarehouse />} />
       </Routes>
     </BrowserRouter>
     </>
