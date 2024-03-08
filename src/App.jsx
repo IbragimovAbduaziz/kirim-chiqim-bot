@@ -1,5 +1,5 @@
 import './css/style.css';
-import AddWarehouse from './components/Warehouse/Addwarehouse';
+import Addwarehouse from './components/Warehouse/Addwarehouse';
 import Allwarehouse from './components/Warehouse/All';
 import Warehouse from './components/Warehouse/Warehouse';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -35,7 +35,7 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="addwarehouse" element={<AddWarehouse  handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="addwarehouse" element={<Addwarehouse  handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="warehouse" element={<Warehouse />} />
           <Route path="addwarehouse" element={<Allwarehouse />} />
       </Routes>
