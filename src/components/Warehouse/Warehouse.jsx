@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Ombor() {
+export default function Warehouse() {
   return (
     <section id="warehouse">
       <div className="container">
