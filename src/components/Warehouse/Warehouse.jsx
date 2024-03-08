@@ -19,7 +19,7 @@ export default function Warehouse() {
   return (
     <section id="warehouse">
       <div className="container">
-        {wares}
+        {JSON.stringify(wares)}
         {/*wares.map(ware=>(<button key={ware._id}>{ware.name}</button>))*/}
       </div>
     </section>
