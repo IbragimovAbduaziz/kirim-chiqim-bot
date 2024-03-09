@@ -5,7 +5,6 @@ export default function Warehouse() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [wares,setWares]=useState([])
   const id = searchParams.get('id')
-  console.log(searchParams);
     useEffect(()=>{
       axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
       //axios.get(`http://localhost:5757/${id}`)
@@ -19,7 +18,7 @@ export default function Warehouse() {
     <section id="warehouse">
       <div className="container">
       {wares.map(ware=> (
-        <Link to={`/view?id=${ware._id}`}>
+        <Link to={`/view?id=${id}?ware=${ware._id}`}>
           <button key={ware._id}>
             {ware.name}
           </button>
