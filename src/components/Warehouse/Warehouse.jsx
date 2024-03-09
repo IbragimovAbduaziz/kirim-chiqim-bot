@@ -13,7 +13,7 @@ export default function Warehouse() {
       })
       .catch(err=>{
         console.log("xatooooooo"+err);
-      })},[searchParams])
+      })},[])
   return (
     <section id="warehouse">
       <div className="container">
