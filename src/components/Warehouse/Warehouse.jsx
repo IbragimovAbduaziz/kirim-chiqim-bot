@@ -18,7 +18,7 @@ export default function Warehouse() {
     <section id="warehouse">
       <div className="container">
       {wares.map(ware=> (
-        <Link to={`/view?id=${id}?ware=${ware._id}`}>
+        <Link to={`/view?id=${id}&ware=${ware._id}`}>
           <button key={ware._id}>
             {ware.name}
           </button>
