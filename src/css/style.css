@@ -3,7 +3,7 @@ a {
   display: block;
 }
 
-.shadow, .container .blog {
+.shadow, body #register .container .blog {
   box-shadow: 0px 0px 10px gray;
 }
 
@@ -11,21 +11,20 @@ a {
   max-width: 1200px;
   margin: auto;
   padding: 1em;
-  padding-top: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.container .blog {
-  width: 750px;
-  padding: 1em;
-  background-color: rgba(1, 1, 1, 0.79);
-  border-radius: 25px;
-  position: relative;
+
+.btn {
+  width: auto;
+  background-color: #020202;
+  color: #C5C5C5;
+  cursor: pointer;
+  padding: 0.5em;
+  border: none;
+  outline: none;
 }
-.container .blog img {
-  width: 20%;
-  margin: auto;
+
+.btn-in {
+  box-shadow: inset 0px 0px 10px gray;
 }
 
 * {
@@ -42,6 +41,22 @@ body {
   background-size: cover;
   width: 100%;
   min-height: 100vh;
+}
+body #register .container {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #register .container .blog {
+  width: 750px;
+  padding: 1em;
+  background-color: rgba(1, 1, 1, 0.79);
+  position: relative;
+}
+body #register .container .blog img {
+  width: 20%;
+  margin: auto;
 }
 body #register .container .blog .form-group {
   height: 100%;
@@ -74,11 +89,36 @@ body #register .container .blog .form-group input::placeholder {
   font-weight: 200;
   letter-spacing: 2px;
 }
-body #register .container .blog .form-group input[type=button] {
-  width: auto;
-  background-color: #020202;
+body #warehouse .container {
+  padding: 1em;
+}
+body #view .container {
+  flex-direction: column;
+}
+body #view .container .blog {
+  width: 100%;
+  padding: 0.5em 0;
+}
+body #view .container .blog > button {
+  background-color: #0BDDF6;
+  color: #020202;
+}
+body #view .container .blog:nth-child(2) {
+  overflow-X: scroll;
+}
+body #view .container .blog table {
+  font-size: 0.8em;
+  background-color: rgba(1, 1, 1, 0.79);
   color: #C5C5C5;
-  cursor: pointer;
+  border-collapse: collapse;
+  border: 1px solid;
+}
+body #view .container .blog table tr th {
+  background-color: #020202;
+}
+body #view .container .blog table tr td, body #view .container .blog table tr th {
+  padding: 0.3em 0.5em;
+  border: 1px solid;
 }
 
 @media screen and (max-width: 768px) {

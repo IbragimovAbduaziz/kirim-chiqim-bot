@@ -9,21 +9,16 @@ a{
   max-width: 1200px;
   margin: auto;
   padding: 1em;
-  padding-top: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .blog{
-    width: 750px;
-    padding: 1em;
-    background-color: $darkAlfa;
-    border-radius: 25px;
-    position: relative;
-    @extend .shadow;
-    img{
-      width: 20%;
-      margin: auto;
-    }
-  }
 }
-
+.btn{
+  width: auto;
+  background-color: $dark;
+  color: $light;
+  cursor: pointer;
+  padding: .5em;
+  border: none;
+  outline: none;
+}
+.btn-in{
+  box-shadow: inset 0px 0px 10px gray;
+}
