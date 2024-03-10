@@ -21,8 +21,8 @@ function App() {
   const sendWare=()=>{
     axios.get(`https://kirim-chiqim-ombor.uz/warehouses/${warehouse}`)
     .then(res=>{      
-      console.log(res.data.name);
-      if(warehouse!="" && res.data.name=="free"){
+      console.log(res.data);
+      if(warehouse!=""){
         tg.MainButton.text="Qoshish :)"
         tg.MainButton.show()
       } else{
