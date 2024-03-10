@@ -24,6 +24,8 @@ function App() {
       if(warehouse!="" && res.data.name===true){
         tg.MainButton.text="Qoshish :)"
         tg.MainButton.show()
+      } else{
+        setErr("Bunday obekt mavjud")
       }
     })
     .catch(err=>{
