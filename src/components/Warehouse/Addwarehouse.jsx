@@ -9,6 +9,7 @@ export default function Addwarehouse({handleWare,sendWare}) {
               <img src={house}/>
               <h3>Ombor yoki do'kon qo'shish!</h3>
               <input type="text" placeholder="Ombor nomini qo'shing....." onChange={handleWare}/>
+              <p className='err'>${err}</p>
               <input type="button" className='btn' value="Qo'shish" onClick={sendWare}/>
             </div>
         </div>

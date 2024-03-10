@@ -21,6 +21,7 @@ export default function Views() {
     if(id==ware.user_id || id==ware.responsuble_id){
       setBul(true)
     }
+    console.log(ware);
   },[ware])
   return (
     <section id="view">
@@ -32,13 +33,13 @@ export default function Views() {
               <table>
                 <tr>
                   <th>ID</th>
-                  <th>TOVAR NOMI</th>
-                  <th>TOVAR MIQDORI</th>
-                  <th>TOVAR HAJMI</th>
+                  <th>NOMI</th>
+                  <th>MIQDORI</th>
+                  <th>HAJMI</th>
                   {bul?<th>QO'SHISH</th>:""}
-                  <th>TOVAR OLISH</th>
+                  <th>OLISH</th>
                   {bul?<th>TASDIQLASH</th>:""}
-                  {bul?<th>TOVAR O'CHIRISH</th>:""}
+                  {bul?<th>O'CHIRISH</th>:""}
                 </tr>
               </table>
             </div>

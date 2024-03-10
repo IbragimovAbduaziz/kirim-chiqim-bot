@@ -115,6 +115,7 @@ body #view .container .blog table {
 }
 body #view .container .blog table tr th {
   background-color: #020202;
+  font-weight: 500;
 }
 body #view .container .blog table tr td, body #view .container .blog table tr th {
   padding: 0.3em 0.5em;

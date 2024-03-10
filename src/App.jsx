@@ -5,6 +5,7 @@ import Warehouse from './components/Warehouse/Warehouse';
 import View from './components/Warehouse/Views';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useCallback, useEffect, useState } from 'react';
+import axios from 'axios';
 
 const tg=window.Telegram.WebApp
 
@@ -15,16 +16,28 @@ function App() {
       tg.ready()
   })
   const handleWare=(e)=>{
-    setWarehouse({name:e.target.value})
+    axios.get(`https://kirim-chiqim-ombor.uz/${e.target.value}`)
+    .then(data=>{
+      if(data){
+        setErr("Bunday nom mavjud")
+        setWarehouse({name:e.target.value})
+      } else {
+        setErr("")
+      }
+    })
+    .catch(err=>{
+      console.log("xatoooo");
+    })
   }
   const sendWare=()=>{
-    if(warehouse!=""){
+    if(warehouse!="" || err==""){
       tg.MainButton.text="Qoshish :)"
       tg.MainButton.show()
     }
   }
 
   const onSendData = useCallback(()=>{
+
       tg.sendData(JSON.stringify(warehouse))
   },[warehouse])
     
@@ -36,7 +49,7 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-          <Route path="addwarehouse" element={<Addwarehouse  handleWare={handleWare} sendWare={sendWare} />} />
+          <Route path="addwarehouse" element={<Addwarehouse  err={err} handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="warehouse" element={<Warehouse />} />
           <Route path="addwarehouse" element={<Allwarehouse />} />
           <Route path="view" element={<View/>} />
