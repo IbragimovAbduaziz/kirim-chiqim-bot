@@ -16,22 +16,10 @@ function App() {
       tg.ready()
   })
   const handleWare=(e)=>{
-    axios.get(`https://kirim-chiqim-ombor.uz/`,{name:e.target.value})
-    .then(data=>{
-      console.log(data.data);
-      if(data.data){
-        setErr("Bunday obekt mavjud")
-      } else {
-        setErr("")
-        setWarehouse({name:e.target.value})
-      }
-    })
-    .catch(err=>{
-      console.log("xatoooo");
-    })
+      setWarehouse({name:e.target.value})
   }
   const sendWare=()=>{
-    if(warehouse!="" && err==""){
+    if(warehouse!=""){
       tg.MainButton.text="Qoshish :)"
       tg.MainButton.show()
     }
