@@ -19,10 +19,18 @@ function App() {
       setWarehouse({name:e.target.value})
   }
   const sendWare=()=>{
-    if(warehouse!=""){
-      tg.MainButton.text="Qoshish :)"
-      tg.MainButton.show()
-    }
+    axios.get(`https://kirim-chiqim-ombor.uz/ombor/${warehouse}`)
+    .thne(res=>{
+      console.log(res.data);
+      if(warehouse!=""){
+        tg.MainButton.text="Qoshish :)"
+        tg.MainButton.show()
+      }
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+    
   }
 
   const onSendData = useCallback(()=>{
