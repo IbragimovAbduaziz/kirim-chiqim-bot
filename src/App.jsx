@@ -19,10 +19,9 @@ function App() {
       setWarehouse({name:e.target.value})
   }
   const sendWare=()=>{
-    axios.get(`https://kirim-chiqim-ombor.uz/ombor/${warehouse}`)
-    .thne(res=>{
-      console.log(res.data);
-      if(warehouse!=""){
+    axios.get(`https://kirim-chiqim-ombor.uz/warehouses/${warehouse}`)
+    .then(res=>{      
+      if(warehouse!="" && res.data.name==true){
         tg.MainButton.text="Qoshish :)"
         tg.MainButton.show()
       }
