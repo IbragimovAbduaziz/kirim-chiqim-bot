@@ -16,13 +16,14 @@ function App() {
       tg.ready()
   })
   const handleWare=(e)=>{
-    axios.get(`https://kirim-chiqim-ombor.uz/${e.target.value}`)
+    axios.get(`https://kirim-chiqim-ombor.uz/`,{name:e.target.value})
     .then(data=>{
-      if(data){
-        setErr("Bunday nom mavjud")
-        setWarehouse({name:e.target.value})
+      console.log(data.data);
+      if(data.data){
+        setErr("Bunday obekt mavjud")
       } else {
         setErr("")
+        setWarehouse({name:e.target.value})
       }
     })
     .catch(err=>{
@@ -30,7 +31,7 @@ function App() {
     })
   }
   const sendWare=()=>{
-    if(warehouse!="" || err==""){
+    if(warehouse!="" && err==""){
       tg.MainButton.text="Qoshish :)"
       tg.MainButton.show()
     }
