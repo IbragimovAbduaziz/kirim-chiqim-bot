@@ -5,6 +5,7 @@ import { useSearchParams} from "react-router-dom";
 export default function Views() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [ware,setWare]=useState()
+  let [bul,setBul]=useState(false)
   const id = searchParams.get('id')
   const wareId=searchParams.get('ware')
   useEffect(()=>{
@@ -16,10 +17,27 @@ export default function Views() {
       console.log("xatooo"+err);
     })
   },[wareId])
+  if(id==ware.user_id || id==ware.responsuble_id){
+    setBul(true)
+  }
   return (
     <section id="view">
         <div className="container">
-            {JSON.stringify(ware)}
+            <div className="blog">
+              {bul?<button>Tovar qo'shish</button>:""}
+            </div>
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>TOVAR NOMI</th>
+                <th>TOVAR MIQDORI</th>
+                <th>TOVAR HAJMI</th>
+                {bul?<th>QO'SHISH</th>:""}
+                <th>TOVAR OLISH</th>
+                {bul?<th>TASDIQLASH</th>:""}
+                {bul?<th>TOVAR O'CHIRISH</th>:""}
+              </tr>
+            </table>
         </div>
     </section>
   )

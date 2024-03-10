@@ -8,7 +8,7 @@ export default function Warehouse() {
     useEffect(()=>{
       axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
       //axios.get(`http://localhost:5757/${id}`)
-      .then(data=>{
+      .then(data=>{        
           setWares(data.data)
       })
       .catch(err=>{
