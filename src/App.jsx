@@ -18,26 +18,24 @@ function App() {
   const handleWare=(e)=>{
       setWarehouse({name:e.target.value})
   }
-  const sendWare=()=>{
+  const sendWare=()=>{    
+    if(warehouse!=""){
+      tg.MainButton.text="Qoshish :)"
+      tg.MainButton.show()
+    }
+  }
+
+  const onSendData = useCallback(()=>{
     axios.get(`https://kirim-chiqim-ombor.uz/warehouses/${warehouse}`)
-    .then(res=>{      
-      console.log(res.data);
-      if(warehouse!=""){
-        tg.MainButton.text="Qoshish :)"
-        tg.MainButton.show()
-      } else{
-        setErr("Bunday obekt mavjud")
-      }
+    .then(res=>{  
+        if(res.data.length>0){
+          return setErr("Bunday obekt mavjud!")
+        }
+        tg.sendData(JSON.stringify(warehouse))
     })
     .catch(err=>{
       console.log(err);
     })
-    
-  }
-
-  const onSendData = useCallback(()=>{
-
-      tg.sendData(JSON.stringify(warehouse))
   },[warehouse])
     
   useEffect(()=>{
