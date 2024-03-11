@@ -74,7 +74,9 @@ body{
             .blog{
                 width: 100%;
                 padding: .5em 0;
-
+                input{
+                    width: 100%;
+                }
                 >button {
                     background-color: $aqua;
                     color: $dark;

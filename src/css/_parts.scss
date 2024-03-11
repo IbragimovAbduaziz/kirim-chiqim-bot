@@ -10,6 +10,14 @@ a{
   margin: auto;
   padding: 1em;
 }
+.txt-in{
+  width: auto;
+  color: $dark;
+  cursor: pointer;
+  padding: .5em;
+  border: none;
+  outline: none;
+}
 .btn{
   width: auto;
   background-color: $dark;

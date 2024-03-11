@@ -13,6 +13,15 @@ a {
   padding: 1em;
 }
 
+.txt-in {
+  width: auto;
+  color: #020202;
+  cursor: pointer;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+}
+
 .btn {
   width: auto;
   background-color: #020202;
@@ -107,6 +116,9 @@ body #view .container {
 body #view .container .blog {
   width: 100%;
   padding: 0.5em 0;
+}
+body #view .container .blog input {
+  width: 100%;
 }
 body #view .container .blog > button {
   background-color: #0BDDF6;

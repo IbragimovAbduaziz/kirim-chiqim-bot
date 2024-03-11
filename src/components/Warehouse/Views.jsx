@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useSearchParams} from "react-router-dom";
+import { useSearchParams,Link} from "react-router-dom";
 
 export default function Views() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [ware,setWare]=useState([])
   let [bul,setBul]=useState(false)
+  let [product,setProduct]=useState("")
+  let [chek,setChek]=useState("")
   const id = searchParams.get('id')
   const wareId=searchParams.get('ware')
   useEffect(()=>{
@@ -23,11 +25,32 @@ export default function Views() {
     }
     console.log(ware);
   },[ware])
+
+  const handValue=(e)=>{
+    setProduct(e.target.value)
+  }
+
+  const sendValue=()=>{
+    axios.post(`https://kirim-chiqim-ombor.uz/ombor/`,{name:product})
+    .then(data=>{
+      setChek("Malumot qo'shisldi")
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
   return (
     <section id="view">
         <div className="container">
             <div className="blog">
-              {bul?<button className='btn btn-in'>Tovar qo'shish</button>:""}
+              <input 
+              type="text"
+              placeholder="......."
+              onChange={handValue}
+              className='txt-in'
+              />
+              <button className='btn btn-in' onClick={sendValue}>Yangi tovar qo'shish</button>
+              <p className='chek'>{}</p>
             </div>
             <div className="blog">
               <table>
@@ -36,10 +59,9 @@ export default function Views() {
                   <th>NOMI</th>
                   <th>MIQDORI</th>
                   <th>HAJMI</th>
-                  {bul?<th>QO'SHISH</th>:""}
+                  <th>QO'SHISH</th>
                   <th>OLISH</th>
                   {bul?<th>TASDIQLASH</th>:""}
-                  {bul?<th>O'CHIRISH</th>:""}
                 </tr>
               </table>
             </div>
