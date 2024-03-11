@@ -89,8 +89,16 @@ body #register .container .blog .form-group input::placeholder {
   font-weight: 200;
   letter-spacing: 2px;
 }
-body #warehouse .container {
-  padding: 1em;
+body #warehouse .container .blog {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+body #warehouse .container .blog button {
+  width: 150px;
+  padding: 1em 1.5em;
 }
 body #view .container {
   flex-direction: column;
