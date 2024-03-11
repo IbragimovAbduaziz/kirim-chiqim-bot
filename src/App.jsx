@@ -39,7 +39,7 @@ function App() {
       <Routes>
           <Route path="addwarehouse" element={<Addwarehouse  err={err} handleWare={handleWare} sendWare={sendWare} />} />
           <Route path="warehouse" element={<Warehouse />} />
-          <Route path="addwarehouse" element={<Allwarehouse />} />
+          <Route path="allwarehouse" element={<Allwarehouse />} />
           <Route path="view" element={<View/>} />
       </Routes>
     </BrowserRouter>

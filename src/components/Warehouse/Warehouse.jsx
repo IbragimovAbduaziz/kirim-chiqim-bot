@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useSearchParams,Outlet, Link } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 export default function Warehouse() {
+  console.log("salom");
   let [searchParams, setSearchParams] = useSearchParams();
   let [wares,setWares]=useState([])
   const id = searchParams.get('id')
-    useEffect(()=>{
+    useEffect(async ()=>{
       axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
       .then(data=>{        
           setWares(data.data)
@@ -16,9 +17,10 @@ export default function Warehouse() {
   return (
     <section id="warehouse">
       <div className="container">
+        <h2>salom</h2>
       {wares.map(ware=> (
         <Link to={`/view?id=${id}&ware=${ware._id}`} key={ware._id} >
-          <button>
+          <button className='btn'>
             {ware.name}
           </button>
         </Link>
