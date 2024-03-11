@@ -50,7 +50,7 @@ export default function Views() {
               className='txt-in'
               />
               <button className='btn btn-in' onClick={sendValue}>Yangi tovar qo'shish</button>
-              <p className='chek'>{}</p>
+              <p className='chek'>{chek}</p>
             </div>
             <div className="blog">
               <table>
