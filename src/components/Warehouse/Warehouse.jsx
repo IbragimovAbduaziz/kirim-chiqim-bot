@@ -16,6 +16,7 @@ export default function Warehouse() {
   return (
     <section id="warehouse">
       <div className="container">
+        <p className="h-title">Mening obektlrim.</p>
         <div className="blog">
           {wares.map(ware=> (
           <Link to={`/view?id=${id}&ware=${ware._id}`} key={ware._id} >

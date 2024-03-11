@@ -7,7 +7,7 @@ export default function Addwarehouse({err,handleWare,sendWare}) {
         <div className="blog">
             <div className="form-group">
               <img src={house}/>
-              <h3>Ombor yoki do'kon qo'shish!</h3>
+              <p className='h-title'>Ombor yoki do'kon qo'shish!</p>
               <input type="text" placeholder="Ombor nomini qo'shing....." onChange={handleWare}/>
               <p className='err'>{err}</p>
               <input type="button" className='btn' value="Qo'shish" onClick={sendWare}/>
