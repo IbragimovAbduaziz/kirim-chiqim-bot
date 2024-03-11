@@ -31,8 +31,9 @@ export default function Views() {
   }
 
   const sendValue=()=>{
-    axios.post(`https://kirim-chiqim-ombor.uz/ombor/`,{name:product})
+    axios.post(`https://kirim-chiqim-ombor.uz/ombor/`,{ware_id:wareId,name:product})
     .then(data=>{
+      console.log(data.data);
       setChek("Malumot qo'shildi")
     })
     .catch(err=>{
