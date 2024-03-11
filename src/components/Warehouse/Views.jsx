@@ -7,6 +7,7 @@ export default function Views() {
   let [ware,setWare]=useState([])
   let [bul,setBul]=useState(false)
   let [product,setProduct]=useState("")
+  let [products,setProducts]=useState([])
   let [chek,setChek]=useState("")
   const id = searchParams.get('id')
   const wareId=searchParams.get('ware')
@@ -40,6 +41,13 @@ export default function Views() {
       console.log(err);
     })
   }
+
+  useEffect(()=>{
+    axios.get(`https://kirim-chiqim-ombor.uz/products/${wareId}`)
+    .then(res=>{
+      setProducts(res.data)
+    })
+  },[sendValue])
   return (
     <section id="view">
         <div className="container">
@@ -64,6 +72,7 @@ export default function Views() {
                   <th>OLISH</th>
                   {bul?<th>TASDIQLASH</th>:""}
                 </tr>
+                {JSON.stringify(products)}
               </table>
             </div>
         </div>
