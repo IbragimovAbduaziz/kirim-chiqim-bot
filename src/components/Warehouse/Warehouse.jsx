@@ -6,7 +6,7 @@ export default function Warehouse() {
   let [searchParams, setSearchParams] = useSearchParams();
   let [wares,setWares]=useState([])
   const id = searchParams.get('id')
-    useEffect(async ()=>{
+    useEffect(()=>{
       axios.get(`https://kirim-chiqim-ombor.uz/${id}`)
       .then(data=>{        
           setWares(data.data)
