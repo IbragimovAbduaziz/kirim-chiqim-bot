@@ -26,16 +26,7 @@ function App() {
   }
 
   const onSendData = useCallback(()=>{
-    axios.get(`https://kirim-chiqim-ombor.uz/warehouses/${warehouse}`)
-    .then(res=>{  
-        if(res.data.length>0){
-          return setErr("Bunday obekt mavjud!")
-        }
-        tg.sendData(JSON.stringify(warehouse))
-    })
-    .catch(err=>{
-      console.log(err);
-    })
+      tg.sendData(JSON.stringify(warehouse))
   },[warehouse])
     
   useEffect(()=>{
