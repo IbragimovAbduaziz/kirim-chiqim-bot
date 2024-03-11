@@ -33,7 +33,7 @@ export default function Views() {
   const sendValue=()=>{
     axios.post(`https://kirim-chiqim-ombor.uz/ombor/`,{name:product})
     .then(data=>{
-      setChek("Malumot qo'shisldi")
+      setChek("Malumot qo'shildi")
     })
     .catch(err=>{
       console.log(err);
