@@ -44,8 +44,15 @@ export default function Views() {
     axios.get(`https://kirim-chiqim-ombor.uz/products/${wareId}`)
     .then(res=>{
       setProducts(res.data)
+      setProduct("")
+      fun()
     })
-  },[])
+  },[chek])
+  function fun(){
+    setTimeout(()=>{
+      setChek("")
+    },1000)
+  }
   return (
     <section id="view">
         <div className="container">
@@ -55,6 +62,7 @@ export default function Views() {
               placeholder="......."
               onChange={handValue}
               className='txt-in'
+              value={product}
               />
               <button className='btn btn-in' onClick={sendValue}>Yangi tovar qo'shish</button>
               <p className='chek'>{chek}</p>
