@@ -1,12 +1,9 @@
-import house from '../../../public/house.png';
-
 export default function Addwarehouse({err,handleWare,sendWare}) {
   return(
     <section id="register">
       <div className="container">
         <div className="blog">
             <div className="form-group">
-              <img src={house}/>
               <p className='h-title'>Ombor yoki do'kon qo'shish!</p>
               <input type="text" placeholder="Ombor nomini qo'shing....." onChange={handleWare}/>
               <p className='err'>{err}</p>

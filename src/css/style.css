@@ -55,7 +55,7 @@ body {
   background-image: url(../../public/warehouse.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 50%;
   width: 100%;
   min-height: 100vh;
 }
@@ -70,10 +70,6 @@ body #register .container .blog {
   padding: 1em;
   background-color: rgba(1, 1, 1, 0.79);
   position: relative;
-}
-body #register .container .blog img {
-  width: 20%;
-  margin: auto;
 }
 body #register .container .blog .form-group {
   height: 100%;

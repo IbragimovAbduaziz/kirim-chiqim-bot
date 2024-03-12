@@ -10,7 +10,7 @@ body{
     background-image: url(../../public/warehouse.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size:cover;
+    background-size:50%;
     width: 100%;
     min-height: 100vh;
     #register{
@@ -25,10 +25,6 @@ body{
                 background-color: $darkAlfa;
                 position: relative;
                 @extend .shadow;
-                img{
-                width: 20%;
-                margin: auto;
-                }
                 .form-group{
                         height: 100%;
                         display: flex;
