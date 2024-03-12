@@ -16,7 +16,7 @@ function App() {
       tg.ready()
   })
   const handleWare=(e)=>{
-      setWarehouse({name:e.target.value})
+      setWarehouse({name:e.target.value.toUpperCase()})
   }
   const sendWare=()=>{    
     if(warehouse!=""){
