@@ -76,7 +76,6 @@ export default function Views() {
                   <th>HAJMI</th>
                   <th>QO'SHISH</th>
                   <th>OLISH</th>
-                  {bul?<th>TASDIQLASH</th>:""}
                 </tr>
                 {products.map((item,i)=><tr key={item._id}>
                   <td>{i+1}</td>
@@ -85,7 +84,6 @@ export default function Views() {
                   <td>{item.volume}</td>
                   <td><button>Qoshish</button></td>
                   <td><button>Olish</button></td>
-                  {bul?<td><button>Tasdiqlash</button></td>:""}
                 </tr>)}
               </table>
             </div>
