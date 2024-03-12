@@ -8,6 +8,7 @@ export default function All() {
     axios.get(`https://kirim-chiqim-ombor.uz/ombor/`)
     .then(data=>{
         setWares(data.data)
+        console.log(data.data);
     })
     .catch(err=>{
       console.log(err);
@@ -16,7 +17,8 @@ export default function All() {
 
   const searchWare=(e)=>{
     const val=e.target.value.toUpperCase()
-    const changeWare=wares.filter(item=>item.name==val)    
+    console.log(val);
+    console.log(wares);
   }
   return (
     <section id="all">
