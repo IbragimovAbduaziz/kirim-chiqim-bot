@@ -24,18 +24,16 @@ export default function Views() {
     if(id==ware.user_id || id==ware.responsuble_id){
       setBul(true)
     }
-    console.log(ware);
   },[ware])
 
   const handValue=(e)=>{
-    setProduct(e.target.value)
+    setProduct(e.target.value.toUpperCase())
   }
 
   const sendValue=()=>{
     axios.post(`https://kirim-chiqim-ombor.uz/ombor/`,{ware_id:wareId,name:product})
     .then(data=>{
-      console.log(data.data);
-      setChek("Malumot qo'shildi")
+      setChek(data.data.message)
     })
     .catch(err=>{
       console.log(err);
@@ -47,7 +45,7 @@ export default function Views() {
     .then(res=>{
       setProducts(res.data)
     })
-  },[sendValue])
+  },[])
   return (
     <section id="view">
         <div className="container">
@@ -72,7 +70,15 @@ export default function Views() {
                   <th>OLISH</th>
                   {bul?<th>TASDIQLASH</th>:""}
                 </tr>
-                {JSON.stringify(products)}
+                {products.map((item,i)=><tr key={item._id}>
+                  <td>{i+1}</td>
+                  <td>{item.name}</td>
+                  <td>{item.count}</td>
+                  <td>{item.volume}</td>
+                  <td><button>Qoshish</button></td>
+                  <td><button>Olish</button></td>
+                  {bul?<td><button>Tasdiqlash</button></td>:""}
+                </tr>)}
               </table>
             </div>
         </div>
