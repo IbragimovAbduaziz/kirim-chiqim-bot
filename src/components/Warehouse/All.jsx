@@ -8,7 +8,6 @@ export default function All() {
     axios.get(`https://kirim-chiqim-ombor.uz/ombor/`)
     .then(data=>{
         setWares(data.data)
-        console.log(data.data);
     })
     .catch(err=>{
       console.log(err);
@@ -17,8 +16,8 @@ export default function All() {
 
   const searchWare=(e)=>{
     const val=e.target.value.toUpperCase()
-    console.log(val);
-    console.log(wares);
+    const asdf=wares.filter(item=>item.name.toUpperCase().includes(val))
+    setChangeWare(asdf)
   }
   return (
     <section id="all">
@@ -31,7 +30,9 @@ export default function All() {
                 onChange={searchWare}
                 />
               </div>
-              {JSON.stringify(changeWare)}
+              <div className="blog">
+                {changeWare?changeWare.map(sd=><button className='btn' key={sd._id}>{sd.name}</button>):""}
+              </div>
         </div>
       </div>
     </section>
